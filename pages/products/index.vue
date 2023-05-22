@@ -2,7 +2,7 @@
 	<div>
 		<h2 class="mb-5 text-4xl">Products</h2>
 
-		<div class="grid grid-cols-4 gap-5">
+		<div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
 			<div v-for="(product, i) in products" :key="i">
 				<NuxtLink
 					:to="`/products/${product.id}`"
