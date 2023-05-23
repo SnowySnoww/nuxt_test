@@ -1,12 +1,6 @@
 <template>
 	<div>
-		<p>
-			{{ product.title }}
-		</p>
-		<p>
-			{{ product.description }}
-		</p>
-		<p>{{ product.price }}</p>
+		<ProductDetails :product="product" />
 	</div>
 </template>
 
@@ -16,6 +10,14 @@
 
 	// fetch the product
 	const { data: product } = await useFetch(uri, { key: id });
+
+	if (!product.value) {
+		throw createError({
+			statusCode: 404,
+			statusMessage: `Product not found: ${id}`,
+			fatal: true,
+		});
+	}
 
 	definePageMeta({
 		title: 'Products',

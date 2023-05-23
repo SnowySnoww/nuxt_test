@@ -10,4 +10,12 @@ body {
 	.btn {
 		@apply bg-[#12b488] text-white px-3 py-2 rounded-md text-sm;
 	}
+
+	.card {
+		@apply flex flex-col items-center bg-slate-600 rounded-3xl p-4;
+	}
+
+	.btn {
+		@apply my-4 bg-[#12b488] py-1 px-4 rounded-full	text-white;
+	}
 }

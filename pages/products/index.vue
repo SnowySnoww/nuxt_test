@@ -4,16 +4,8 @@
 
 		<div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
 			<div v-for="(product, i) in products" :key="i">
-				<NuxtLink
-					:to="`/products/${product.id}`"
-					class="flex flex-col items-center bg-slate-600 rounded-3xl p-4"
-				>
-					<h3 class="text-xl">
-						{{ product.title.substring(0, 30) + '...' }}
-					</h3>
-					<img :src="product.image" :alt="product.title" class="max-h-40" />
-					<p>{{ product.description.substring(0, 100) + '...' }}</p>
-					<p>$ {{ product.price }}</p>
+				<NuxtLink :to="`/products/${product.id}`">
+					<ProductCard :product="product" />
 				</NuxtLink>
 			</div>
 		</div>
